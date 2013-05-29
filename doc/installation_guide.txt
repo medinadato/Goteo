@@ -2,27 +2,37 @@ INSTALLATION GUIDE
 ==================
 
 Have a server with:
-	- Apache 2.2 ( with mod_rewrite )
+	- Apache 2.2 ( with mod_rewrite ) / Nginx
 	- PHP 5.3	 ( ensure you can see phpinfo() )
 	- MySql 5.5  ( ensure you can create and manage a database )
 
-Prepare a htdocs folder on your server that can be accessed with a browser. Maybe you have to modify the virtualhost file on your server.
+#Prepare a htdocs folder on your server that can be accessed with a browser. Maybe you have to modify the virtualhost file on your server.
+#Uncompress source files from github into that folder (you dont need to have the /db and /doc folders published)
+#Execute the /db/goteo.sql script on the database, then the /db/pages.sql 
 
-Uncompress source files from github into that folder (you dont need to have the /db and /doc folders published)
 
-Execute the /db/goteo.sql script on the database, then the /db/pages.sql 
+Go into your root directory (/var/www, /usr/share/nginx, or whatsoever) and run the git command line:
+    $ git clone git@github.com:medinadato/Goteo.git goteo
 
-Modify /config.php file with database credentials:
-	· GOTEO_DB_SCHEMA is the name of your database
-	· GOTEO_DB_USERNAME is the user you created for your database
-	· GOTEO_DB_PASSWORD is the password you setted for that user
+It is gonna create a new folder goteo. Now set your virtual host to point to this folder.
+
+Create a new database's user for goteo:
+    $ mysql -uUSER -pPASS -e "CREATE SCHEMA goteo";
+
+Create a user in your database for goteo application
+    $ mysql -uUSER -pPASS -e "GRANT ALL PRIVILEGES ON goteo.* TO 'goteo'@'localhost' IDENTIFIED BY '123456'";
+
+Modify ./config.php file with database credentials:
+	- GOTEO_DB_SCHEMA is the name of your database
+	- GOTEO_DB_USERNAME is the user you created for your database
+	- GOTEO_DB_PASSWORD is the password you setted for that user
 
 Set the email and pasword for the goteo root user with the following SQL sentence:
 	UPDATE user SET password = SHA1('yourpassword') AND email = 'youremail' WHERE id = 'root';
 
 Modify /config.php file with the access point to the htdocs folder
-	· SITE_URL is 'http://your.intallation.site'
-	· SRC_URL is (for you and now) the same 'http://your.intallation.site'
+	- SITE_URL is 'http://your.intallation.site'
+	- SRC_URL is (for you and now) the same 'http://your.intallation.site'
 
 Every thing should be working fine at http://your.intallation.site 
 

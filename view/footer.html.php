@@ -18,10 +18,10 @@
  *
  */
 
-use Goteo\Library\Text,
-    Goteo\Model\Category,
-    Goteo\Model\Post,
-    Goteo\Model\Sponsor;
+use Goteo\Library\Text;
+use Goteo\Model\Category;
+use Goteo\Model\Post;
+use Goteo\Model\Sponsor;
 
 $lang = (LANG != 'es') ? '?lang='.LANG : '';
 

@@ -61,8 +61,8 @@ define('GOTEO_DB_HOST', 'localhost');
 define('GOTEO_DB_PORT', 3306);
 define('GOTEO_DB_CHARSET', 'UTF-8');
 define('GOTEO_DB_SCHEMA', 'goteo');
-define('GOTEO_DB_USERNAME', 'root');
-define('GOTEO_DB_PASSWORD', 'root');
+define('GOTEO_DB_USERNAME', 'goteo');
+define('GOTEO_DB_PASSWORD', '123456');
 
 //Uploads i catxe
 define('GOTEO_DATA_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
@@ -90,8 +90,8 @@ define('GOTEO_GETTEXT_DOMAIN', 'messages');
 define('GOTEO_GETTEXT_BYPASS_CACHING', true);
 
 // url
-define('SITE_URL', 'http://localhost:8888/');
-define('SRC_URL', 'http://localhost:8888/');
+define('SITE_URL', 'http://local.goteo/');
+define('SRC_URL', 'http://local.goteo/');
 
 // Cron params
 define('CRON_PARAM', '');

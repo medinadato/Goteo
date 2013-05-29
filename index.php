@@ -18,13 +18,13 @@
  *
  */
 
-use Goteo\Core\Resource,
-    Goteo\Core\Error,
-    Goteo\Core\Redirection,
-    Goteo\Core\ACL,
-    Goteo\Library\Text,
-    Goteo\Library\Message,
-    Goteo\Library\Lang;
+use Goteo\Core\Resource;
+use Goteo\Core\Error;
+use Goteo\Core\Redirection;
+use Goteo\Core\ACL;
+use Goteo\Library\Text;
+use Goteo\Library\Message;
+use Goteo\Library\Lang;
 
 require_once 'config.php';
 require_once 'core/common.php';
